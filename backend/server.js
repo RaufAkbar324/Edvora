@@ -87,6 +87,6 @@ app.put('/api/users/:id', auth('admin'), wrap(async (req, res) => res.json(await
 async function seed() { await User.deleteMany(); const h = await bcrypt.hash('password', 10);
   await User.create([{ name: 'Muhammad Rauf Akbar', uid: '23-arid-561', password: h }, { name: 'Ms. Nergis Abbasi', uid: 'T-001', password: h, role: 'teacher' }, { name: 'Admin', uid: 'A-001', password: h, role: 'admin' }]);
   console.log('Seeded 23-arid-561 (student), T-001 (teacher), A-001 (admin); password: password'); }
-mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/assessiq').then(async () => {
+mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/edvora').then(async () => {
   if (process.argv.includes('--seed')) { await seed(); process.exit(); }
-  app.listen(process.env.PORT || 5000, () => console.log('AssessIQ API on :' + (process.env.PORT || 5000))); }).catch(e => console.error('MongoDB error:', e.message));
+  app.listen(process.env.PORT || 5000, () => console.log('Edvora API on :' + (process.env.PORT || 5000))); }).catch(e => console.error('MongoDB error:', e.message));

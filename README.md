@@ -1,4 +1,4 @@
-# AssessIQ: AI-Based Assessment & Integrity System
+# Edvora: AI-Based Assessment & Integrity System
 React (Vite) frontend + Node/Express + MongoDB backend. Roles: student, teacher, admin (API only).
 
 ## Run
